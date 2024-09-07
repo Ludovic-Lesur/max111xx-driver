@@ -87,13 +87,13 @@ MAX111XX_status_t MAX111XX_init(void);
 MAX111XX_status_t MAX111XX_de_init(void);
 
 /*!******************************************************************
- * \fn MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, uint16_t* adc_data_xbits)
+ * \fn MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t_t* adc_data_xbits)
  * \brief Perform a channel conversion.
  * \param[in]  	channel: Channel to convert.
- * \param[out] 	adc_data_xbits: Pointer to short that will contain the x-bits ADC data.
+ * \param[out] 	adc_data_xbits: Pointer to integer that will contain the x-bits ADC data.
  * \retval		Function execution status.
  *******************************************************************/
-MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, uint16_t* adc_data_xbits);
+MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* adc_data_xbits);
 
 /*******************************************************************/
 #define MAX111XX_exit_error(base) { ERROR_check_exit(max111xx_status, MAX111XX_SUCCESS, base) }

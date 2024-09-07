@@ -92,7 +92,7 @@ errors:
 }
 
 /*******************************************************************/
-MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, uint16_t* adc_data_xbits) {
+MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* adc_data_xbits) {
 	// Local variables.
 	MAX111XX_status_t status = MAX111XX_SUCCESS;
 	uint16_t spi_command = 0;
@@ -147,7 +147,7 @@ MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, uint16_t*
 		goto errors;
 	}
 	// Parse output data.
-	(*adc_data_xbits) = ((dout.data >> (12 - MAX111XX_DRIVER_NUMBER_OF_BITS)) & MAX111XX_FULL_SCALE);
+	(*adc_data_xbits) = (int32_t) ((dout.data >> (12 - MAX111XX_DRIVER_NUMBER_OF_BITS)) & MAX111XX_FULL_SCALE);
 errors:
 	return status;
 }
