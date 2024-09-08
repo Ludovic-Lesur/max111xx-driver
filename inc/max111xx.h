@@ -38,6 +38,8 @@ typedef enum {
 	MAX111XX_ERROR_BASE_LAST = (MAX111XX_ERROR_BASE_DELAY + MAX111XX_DRIVER_DELAY_ERROR_BASE_LAST)
 } MAX111XX_status_t;
 
+#ifndef MAX111XX_DRIVER_DISABLE
+
 /*!******************************************************************
  * \enum MAX111XX_channel_t
  * \brief MAX111XX channels list.
@@ -103,5 +105,7 @@ MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* 
 
 /*******************************************************************/
 #define MAX111XX_stack_exit_error(base, code) { ERROR_check_stack_exit(max111xx_status, MAX111XX_SUCCESS, base, code) }
+
+#endif /* MAX111XX_DRIVER_DISABLE */
 
 #endif /* __MAX111XX_H__ */

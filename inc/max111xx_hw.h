@@ -8,8 +8,13 @@
 #ifndef __MAX111XX_HW_H__
 #define __MAX111XX_HW_H__
 
+#ifndef MAX111XX_DRIVER_DISABLE_FLAGS_FILE
+#include "max111xx_driver_flags.h"
+#endif
 #include "max111xx.h"
 #include "types.h"
+
+#ifndef MAX111XX_DRIVER_DISABLE
 
 /*** MAX111XX HW functions ***/
 
@@ -58,5 +63,7 @@ MAX111XX_status_t MAX111XX_HW_gpio_read_eoc(uint8_t* state);
  * \retval		Function execution status.
  *******************************************************************/
 MAX111XX_status_t MAX111XX_HW_delay_milliseconds(uint32_t delay_ms);
+
+#endif /* MAX111XX_DRIVER_DISABLE */
 
 #endif /* __MAX111XX_HW_H__ */

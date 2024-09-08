@@ -7,8 +7,13 @@
 
 #include "max111xx_hw.h"
 
+#ifndef MAX111XX_DRIVER_DISABLE_FLAGS_FILE
+#include "max111xx_driver_flags.h"
+#endif
 #include "max111xx.h"
 #include "types.h"
+
+#ifndef MAX111XX_DRIVER_DISABLE
 
 /*** MAX111XX HW functions ***/
 
@@ -56,3 +61,5 @@ MAX111XX_status_t __attribute__((weak)) MAX111XX_HW_delay_milliseconds(uint32_t 
 	UNUSED(delay_ms);
 	return status;
 }
+
+#endif /* MAX111XX_DRIVER_DISABLE */

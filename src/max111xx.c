@@ -13,6 +13,8 @@
 #include "max111xx_hw.h"
 #include "types.h"
 
+#ifndef MAX111XX_DRIVER_DISABLE
+
 /*** MAX111XX local macros ***/
 
 #define MAX111XX_SUB_DELAY_MS	100
@@ -151,3 +153,5 @@ MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* 
 errors:
 	return status;
 }
+
+#endif /* MAX111XX_DRIVER_DISABLE */
