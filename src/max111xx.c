@@ -140,7 +140,6 @@ MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* 
         }
     }
     while (eoc_state != 0);
-    
     // SPI transfer.
     status = MAX111XX_HW_spi_write_read_16(&spi_command, &(dout.value), 1);
     if (status != MAX111XX_SUCCESS) goto errors;
