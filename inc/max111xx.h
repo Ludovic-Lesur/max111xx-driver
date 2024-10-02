@@ -15,7 +15,7 @@
 
 /*** MAX111XX macros ***/
 
-#define MAX111XX_FULL_SCALE		((0b1 << MAX111XX_DRIVER_NUMBER_OF_BITS) - 1)
+#define MAX111XX_FULL_SCALE     ((0b1 << MAX111XX_DRIVER_NUMBER_OF_BITS) - 1)
 
 /*** MAX111XX structures ***/
 
@@ -24,18 +24,18 @@
  * \brief MAX111XX driver error codes.
  *******************************************************************/
 typedef enum {
-	// Driver errors.
-	MAX111XX_SUCCESS = 0,
-	MAX111XX_ERROR_NULL_PARAMETER,
-	MAX111XX_ERROR_CHANNEL,
-	MAX111XX_ERROR_CONVERSION_TIMEOUT,
-	MAX111XX_ERROR_DOUT_CHANNEL,
-	// Low level drivers errors.
-	MAX111XX_ERROR_BASE_GPIO = 0x0100,
-	MAX111XX_ERROR_BASE_SPI = (MAX111XX_ERROR_BASE_GPIO + MAX111XX_DRIVER_GPIO_ERROR_BASE_LAST),
-	MAX111XX_ERROR_BASE_DELAY = (MAX111XX_ERROR_BASE_SPI + MAX111XX_DRIVER_SPI_ERROR_BASE_LAST),
-	// Last base value.
-	MAX111XX_ERROR_BASE_LAST = (MAX111XX_ERROR_BASE_DELAY + MAX111XX_DRIVER_DELAY_ERROR_BASE_LAST)
+    // Driver errors.
+    MAX111XX_SUCCESS = 0,
+    MAX111XX_ERROR_NULL_PARAMETER,
+    MAX111XX_ERROR_CHANNEL,
+    MAX111XX_ERROR_CONVERSION_TIMEOUT,
+    MAX111XX_ERROR_DOUT_CHANNEL,
+    // Low level drivers errors.
+    MAX111XX_ERROR_BASE_GPIO = 0x0100,
+    MAX111XX_ERROR_BASE_SPI = (MAX111XX_ERROR_BASE_GPIO + MAX111XX_DRIVER_GPIO_ERROR_BASE_LAST),
+    MAX111XX_ERROR_BASE_DELAY = (MAX111XX_ERROR_BASE_SPI + MAX111XX_DRIVER_SPI_ERROR_BASE_LAST),
+    // Last base value.
+    MAX111XX_ERROR_BASE_LAST = (MAX111XX_ERROR_BASE_DELAY + MAX111XX_DRIVER_DELAY_ERROR_BASE_LAST)
 } MAX111XX_status_t;
 
 #ifndef MAX111XX_DRIVER_DISABLE
@@ -45,27 +45,27 @@ typedef enum {
  * \brief MAX111XX channels list.
  *******************************************************************/
 typedef enum {
-	MAX111XX_CHANNEL_AIN0 = 0,
-	MAX111XX_CHANNEL_AIN1,
-	MAX111XX_CHANNEL_AIN2,
-	MAX111XX_CHANNEL_AIN3,
+    MAX111XX_CHANNEL_AIN0 = 0,
+    MAX111XX_CHANNEL_AIN1,
+    MAX111XX_CHANNEL_AIN2,
+    MAX111XX_CHANNEL_AIN3,
 #if (MAX111XX_DRIVER_NUMBER_OF_CHANNELS > 4)
-	MAX111XX_CHANNEL_AIN4,
-	MAX111XX_CHANNEL_AIN5,
-	MAX111XX_CHANNEL_AIN6,
-	MAX111XX_CHANNEL_AIN7,
+    MAX111XX_CHANNEL_AIN4,
+    MAX111XX_CHANNEL_AIN5,
+    MAX111XX_CHANNEL_AIN6,
+    MAX111XX_CHANNEL_AIN7,
 #endif
 #if (MAX111XX_DRIVER_NUMBER_OF_CHANNELS > 8)
-	MAX111XX_CHANNEL_AIN8,
-	MAX111XX_CHANNEL_AIN9,
-	MAX111XX_CHANNEL_AIN10,
-	MAX111XX_CHANNEL_AIN11,
-	MAX111XX_CHANNEL_AIN12,
-	MAX111XX_CHANNEL_AIN13,
-	MAX111XX_CHANNEL_AIN14,
-	MAX111XX_CHANNEL_AIN15,
+    MAX111XX_CHANNEL_AIN8,
+    MAX111XX_CHANNEL_AIN9,
+    MAX111XX_CHANNEL_AIN10,
+    MAX111XX_CHANNEL_AIN11,
+    MAX111XX_CHANNEL_AIN12,
+    MAX111XX_CHANNEL_AIN13,
+    MAX111XX_CHANNEL_AIN14,
+    MAX111XX_CHANNEL_AIN15,
 #endif
-	MAX111XX_CHANNEL_LAST
+    MAX111XX_CHANNEL_LAST
 } MAX111XX_channel_t;
 
 /*** MAX111XX functions ***/
@@ -73,27 +73,27 @@ typedef enum {
 /*!******************************************************************
  * \fn MAX111XX_status_t MAX111XX_init(void)
  * \brief Init MAX111XX driver.
- * \param[in]  	none
- * \param[out] 	none
- * \retval		Function execution status.
+ * \param[in]   none
+ * \param[out]  none
+ * \retval      Function execution status.
  *******************************************************************/
 MAX111XX_status_t MAX111XX_init(void);
 
 /*!******************************************************************
  * \fn MAX111XX_status_t MAX111XX_de_init_init(void)
  * \brief Release MAX111XX driver.
- * \param[in]  	none
- * \param[out] 	none
- * \retval		Function execution status.
+ * \param[in]   none
+ * \param[out]  none
+ * \retval      Function execution status.
  *******************************************************************/
 MAX111XX_status_t MAX111XX_de_init(void);
 
 /*!******************************************************************
  * \fn MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t_t* adc_data_xbits)
  * \brief Perform a channel conversion.
- * \param[in]  	channel: Channel to convert.
- * \param[out] 	adc_data_xbits: Pointer to integer that will contain the x-bits ADC data.
- * \retval		Function execution status.
+ * \param[in]   channel: Channel to convert.
+ * \param[out]  adc_data_xbits: Pointer to integer that will contain the x-bits ADC data.
+ * \retval      Function execution status.
  *******************************************************************/
 MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* adc_data_xbits);
 
