@@ -17,8 +17,8 @@
 
 /*** MAX111XX local macros ***/
 
-#define MAX111XX_SUB_DELAY_MS   100
-#define MAX111XX_TIMEOUT_MS     2000
+#define MAX111XX_SUB_DELAY_MS   10
+#define MAX111XX_TIMEOUT_MS     1000
 
 /*** MAX111XX local structures ***/
 
@@ -112,8 +112,8 @@ MAX111XX_status_t MAX111XX_convert_channel(MAX111XX_channel_t channel, int32_t* 
     }
     // Configure ADC.
     // Single-ended unipolar (already done at POR).
-    // Enable averaging: AVGON='1' and NAVG='00' (4 conversions).
-    status = _MAX111XX_write_register(MAX111XX_REGISTER_ADC_CONFIG, 0x0200);
+    // Enable averaging: AVGON='1' and NAVG='11' (32 conversions).
+    status = _MAX111XX_write_register(MAX111XX_REGISTER_ADC_CONFIG, 0x0380);
     if (status != MAX111XX_SUCCESS) goto errors;
     // Select channel.
     status = _MAX111XX_write_register(MAX111XX_REGISTER_CUSTOM_SCAN1, (0b1 << (channel + 3)));
