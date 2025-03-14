@@ -11,6 +11,7 @@
 #ifndef MAX111XX_DRIVER_DISABLE_FLAGS_FILE
 #include "max111xx_driver_flags.h"
 #endif
+#include "error.h"
 #include "types.h"
 
 /*** MAX111XX macros ***/
@@ -31,7 +32,7 @@ typedef enum {
     MAX111XX_ERROR_CONVERSION_TIMEOUT,
     MAX111XX_ERROR_DOUT_CHANNEL,
     // Low level drivers errors.
-    MAX111XX_ERROR_BASE_GPIO = 0x0100,
+    MAX111XX_ERROR_BASE_GPIO = ERROR_BASE_STEP,
     MAX111XX_ERROR_BASE_SPI = (MAX111XX_ERROR_BASE_GPIO + MAX111XX_DRIVER_GPIO_ERROR_BASE_LAST),
     MAX111XX_ERROR_BASE_DELAY = (MAX111XX_ERROR_BASE_SPI + MAX111XX_DRIVER_SPI_ERROR_BASE_LAST),
     // Last base value.
