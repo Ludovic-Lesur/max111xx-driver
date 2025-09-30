@@ -37,11 +37,11 @@ typedef enum {
 
 /*******************************************************************/
 typedef union {
+    uint16_t value;
     struct {
         unsigned data :12;
         unsigned channel :4;
-    } __attribute__((scalar_storage_order("little-endian")))__attribute__((packed));
-    uint16_t value;
+    } __attribute__((scalar_storage_order("little-endian"))) __attribute__((packed));
 } MAX111XX_dout_t;
 
 /*** MAX111XX local functions ***/
