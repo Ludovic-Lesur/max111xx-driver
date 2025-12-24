@@ -32,3 +32,23 @@ Here is the versions compatibility table:
 | `MAX111XX_DRIVER_DELAY_ERROR_BASE_LAST` | `<value>` | Last error base of the low level delay driver. |
 | `MAX111XX_DRIVER_NUMBER_OF_CHANNELS` | `4` / `8` / `16` | Number of channels of the ADC (depends on part number, refer to datasheet). |
 | `MAX111XX_DRIVER_NUMBER_OF_BITS` | `8` / `10` / `12` | Number of bits of the ADC (depends on part number, refer to datasheet). |
+
+# Build
+
+A static library can be compiled by command line with `cmake`.
+
+```bash
+mkdir build
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE="<toolchain_file_path>" \
+      -DTOOLCHAIN_PATH="<arm-none-eabi-gcc_path>" \
+      -DTYPES_PATH="<types_file_path>" \
+      -DEMBEDDED_UTILS_PATH="<embedded-utils_path>" \
+      -DMAX111XX_DRIVER_GPIO_ERROR_BASE_LAST=0 \
+      -DMAX111XX_DRIVER_SPI_ERROR_BASE_LAST=0 \
+      -DMAX111XX_DRIVER_DELAY_ERROR_BASE_LAST=0 \
+      -DMAX111XX_DRIVER_NUMBER_OF_CHANNELS=8 \
+      -DMAX111XX_DRIVER_NUMBER_OF_BITS=12 \
+      -G "Unix Makefiles" ..
+make all
+```
