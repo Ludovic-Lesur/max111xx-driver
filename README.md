@@ -13,6 +13,7 @@ Here is the versions compatibility table:
 
 | **max111xx-driver** | **embedded-utils** |
 |:---:|:---:|
+| [sw2.8](https://github.com/Ludovic-Lesur/max111xx-driver/releases/tag/sw2.8) | >= [sw5.0](https://github.com/Ludovic-Lesur/embedded-utils/releases/tag/sw5.0) |
 | [sw2.7](https://github.com/Ludovic-Lesur/max111xx-driver/releases/tag/sw2.7) | >= [sw5.0](https://github.com/Ludovic-Lesur/embedded-utils/releases/tag/sw5.0) |
 | [sw2.6](https://github.com/Ludovic-Lesur/max111xx-driver/releases/tag/sw2.6) | >= [sw5.0](https://github.com/Ludovic-Lesur/embedded-utils/releases/tag/sw5.0) |
 | [sw2.5](https://github.com/Ludovic-Lesur/max111xx-driver/releases/tag/sw2.5) | >= [sw5.0](https://github.com/Ludovic-Lesur/embedded-utils/releases/tag/sw5.0) |
