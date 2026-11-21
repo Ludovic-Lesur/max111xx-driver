@@ -30,7 +30,7 @@ if(${BUILD_MODE} STREQUAL STATIC)
     endmacro()
     
     # Compilation flags.
-    add_compilation_flag(MAX111XX_DRIVERS_DISABLE "Disable the MAX111XX driver." OFF)
+    add_compilation_flag(MAX111XX_DRIVER_DISABLE "Disable the MAX111XX driver." OFF)
     add_compilation_flag(MAX111XX_DRIVER_GPIO_ERROR_BASE_LAST "Last error base of the low level GPIO driver." 0)
     add_compilation_flag(MAX111XX_DRIVER_SPI_ERROR_BASE_LAST "Last error base of the low level SPI driver." 0)
     add_compilation_flag(MAX111XX_DRIVER_DELAY_ERROR_BASE_LAST "Last error base of the low level delay driver." 0)
